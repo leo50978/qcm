@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QCM - Clarifications LivAyiti</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9b3b6e0.js" crossorigin="anonymous"></script>
+
+  <!-- Tailwind CDN (play) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex items-start justify-center p-4">
+
+  <main class="w-full max-w-2xl bg-white rounded-lg shadow-md p-5 sm:p-8">
+    <header class="mb-4">
+      <h1 class="text-xl sm:text-2xl font-semibold text-blue-700 flex items-center gap-3">
+        <i class="fas fa-file-contract text-blue-600"></i>
+        Clarifications - LivAyiti
+      </h1>
+      <p class="text-sm text-slate-600 mt-1">Merci de répondre rapidement — cela permettra de créer un wireframe adapté.</p>
+    </header>
+
+    <form id="clarifyForm" class="space-y-5" autocomplete="off">
+      <!-- 1 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">1. Public cible principal</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="radio" name="target" value="Etudiants uniquement" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Étudiants uniquement</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="target" value="Grand public (15-80 ans)" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Grand public (15-80 ans)</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="target" value="Professionnels/enseignants" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Professionnels / Enseignants</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="target" value="Autre" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Autre (précisez ci-dessous)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">2. Nombre de livres au lancement</label>
+        <div class="flex flex-col sm:flex-row sm:gap-3 gap-2">
+          <label class="flex items-center gap-3">
+            <input type="radio" name="volume" value="1-10" class="form-radio h-4 w-4 text-blue-600" />
+            <span>1-10</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="volume" value="11-50" class="form-radio h-4 w-4 text-blue-600" />
+            <span>11-50</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="volume" value="50+" class="form-radio h-4 w-4 text-blue-600" />
+            <span>50+</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="volume" value="Je ne sais pas" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Je ne sais pas</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">3. Langues du site</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="languages" value="Français" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Français</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="languages" value="Anglais" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Anglais</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="languages" value="Espagnol" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Espagnol</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">4. Comment souhaitez-vous livrer les livres numériques ?</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="radio" name="delivery" value="Téléchargement immédiat après paiement" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Téléchargement immédiat après paiement</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="delivery" value="Envoi par e-mail avec lien" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Envoi par e-mail avec lien</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="delivery" value="Licence/compte (accès depuis espace client)" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Licence / accès via espace client</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">5. DRM / protection anti-piratage</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="radio" name="drm" value="Oui, nécessaire" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Oui, nécessaire</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="drm" value="Non, pas pour l'instant" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Non, pas pour l'instant</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="drm" value="Je veux des conseils" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Je veux des conseils</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">6. Charte graphique / logo</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="branding" value="Logo fourni" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Logo fourni</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="branding" value="Charte graphique à créer" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Charte graphique à créer</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="branding" value="Exemples de couleurs : Bleu" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Couleur principale : Bleu</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">7. Paiements souhaités (cochez tout)</label>
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="payments" value="Carte débit/crédit (Visa/Mastercard)" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>Carte (Visa/Mastercard)</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="payments" value="MonCash" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>MonCash</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="payments" value="NatCash" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>NatCash</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" name="payments" value="PayPal" class="form-checkbox h-4 w-4 text-blue-600" />
+            <span>PayPal</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">8. Contenu (textes & images)</label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3">
+            <input type="radio" name="contentReady" value="Prêt" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Prêt</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="contentReady" value="Partiellement prêt" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Partiellement prêt (besoin d'aide)</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="contentReady" value="Non prêt (je veux service rédaction)" class="form-radio h-4 w-4 text-blue-600" />
+            <span>Non prêt (je veux service de rédaction)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 9 Free text -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">9. Priorité des fonctionnalités (choisir 1)</label>
+        <select name="priority" class="w-full rounded-md border-slate-200 shadow-sm p-2 text-sm">
+          <option value="Vente & Paiement">Vente & Paiement</option>
+          <option value="SEO & Blog">SEO & Blog</option>
+          <option value="Espace client & Téléchargements">Espace client & Téléchargements</option>
+          <option value="Design & Branding">Design & Branding</option>
+        </select>
+      </section>
+
+      <!-- 10 Comments -->
+      <section>
+        <label class="block text-sm font-medium text-slate-700 mb-2">10. Commentaire / précision (si "Autre" ou détails)</label>
+        <textarea name="comments" rows="4" class="w-full rounded-md border border-slate-200 p-2 text-sm" placeholder="Écrivez ici..."></textarea>
+      </section>
+
+      <!-- Submit -->
+      <div class="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p class="text-xs text-slate-500">Les réponses s'ouvriront dans WhatsApp pour confirmation avant envoi.</p>
+        <button
+          type="submit"
+          id="sendBtn"
+          class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        >
+          <i class="fab fa-whatsapp"></i>
+          Envoyer via WhatsApp
+        </button>
+      </div>
+    </form>
+
+    <footer class="mt-4 text-xs text-slate-400">
+      <p><strong>Sécurité & confidentialité :</strong> aucun enregistrement côté navigateur — le message est pré-rempli puis ouvert via WhatsApp.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Numéro WhatsApp (format international sans +)
+    const WA_NUMBER = "50935601379";
+
+    function getCheckedValues(form, name) {
+      return Array.from(form.elements[name] ? form.elements[name] : [])
+        .filter(el => (el.type === 'checkbox' || el.type === 'radio') ? el.checked : false)
+        .map(el => el.value);
+    }
+
+    document.getElementById('clarifyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+
+      // Single choice fields (radio)
+      const target = form.elements['target'] && form.elements['target'].value ? form.elements['target'].value : "Non précisé";
+      const volume = form.elements['volume'] && form.elements['volume'].value ? form.elements['volume'].value : "Non précisé";
+      const delivery = form.elements['delivery'] && form.elements['delivery'].value ? form.elements['delivery'].value : "Non précisé";
+      const drm = form.elements['drm'] && form.elements['drm'].value ? form.elements['drm'].value : "Non précisé";
+      const contentReady = form.elements['contentReady'] && form.elements['contentReady'].value ? form.elements['contentReady'].value : "Non précisé";
+      const priority = form.elements['priority'] && form.elements['priority'].value ? form.elements['priority'].value : "Non précisé";
+
+      // Multi choice fields
+      const languages = getCheckedValues(form, 'languages');
+      const branding = getCheckedValues(form, 'branding');
+      const payments = getCheckedValues(form, 'payments');
+
+      const comments = form.elements['comments'] ? form.elements['comments'].value.trim() : "";
+
+      // Build message (user-friendly)
+      const lines = [
+        "QCM - LivAyiti : clarifications",
+        "",
+        "1) Public cible : " + target,
+        "2) Volume au lancement : " + volume,
+        "3) Langues : " + (languages.length ? languages.join(', ') : "Non précisé"),
+        "4) Livraison livres numériques : " + delivery,
+        "5) DRM/protection : " + drm,
+        "6) Branding : " + (branding.length ? branding.join(', ') : "Non précisé"),
+        "7) Moyens de paiement : " + (payments.length ? payments.join(', ') : "Non précisé"),
+        "8) Contenu prêt : " + contentReady,
+        "9) Priorité : " + priority,
+        "10) Commentaires : " + (comments ? comments : "Aucun"),
+        "",
+        "Merci !"
+      ];
+
+      const message = encodeURIComponent(lines.join('\n'));
+
+      // Open WhatsApp (web)
+      const waUrl = `https://wa.me/${WA_NUMBER}?text=${message}`;
+
+      // In some environments, use whatsapp:// protocol might be preferred, but wa.me is universal for web.
+      window.open(waUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
