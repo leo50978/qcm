@@ -3,288 +3,315 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QCM - Clarifications LivAyiti</title>
+  <title>VTN Word News — Questionnaire</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a2d9b3b6e0.js" crossorigin="anonymous"></script>
-
-  <!-- Tailwind CDN (play) -->
+  <!-- Tailwind Play CDN (mobile-first ready) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9b1c6f1.js" crossorigin="anonymous"></script>
+
   <style>
-    body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    html, body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex items-start justify-center p-4">
-
-  <main class="w-full max-w-2xl bg-white rounded-lg shadow-md p-5 sm:p-8">
-    <header class="mb-4">
-      <h1 class="text-xl sm:text-2xl font-semibold text-blue-700 flex items-center gap-3">
-        <i class="fas fa-file-contract text-blue-600"></i>
-        Clarifications - LivAyiti
-      </h1>
-      <p class="text-sm text-slate-600 mt-1">Merci de répondre rapidement — cela permettra de créer un wireframe adapté.</p>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <main class="max-w-xl mx-auto p-4 sm:p-6">
+    <header class="mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-md bg-white shadow flex items-center justify-center">
+          <i class="fas fa-newspaper fa-lg text-slate-700"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold">VTN Word News — Questions rapides</h1>
+          <p class="text-sm text-slate-600">Répondez en 2 minutes — cela nous aide à préparer le wireframe.</p>
+        </div>
+      </div>
     </header>
 
-    <form id="clarifyForm" class="space-y-5" autocomplete="off">
-      <!-- 1 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">1. Public cible principal</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="radio" name="target" value="Etudiants uniquement" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Étudiants uniquement</span>
+    <form id="qcmForm" class="space-y-5 bg-white p-4 rounded-lg shadow" onsubmit="return handleSubmit(event)" aria-describedby="hint">
+      <p id="hint" class="text-sm text-slate-600">Choisissez l'option la plus proche de ce que vous souhaitez. Vous pouvez cocher plusieurs réponses quand indiqué.</p>
+
+      <!-- 1. Charte graphique -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">1) Voulez-vous une charte graphique complète ?</legend>
+        <label class="flex items-center gap-3">
+          <input type="radio" name="charte" value="Non, pas besoin" class="peer sr-only" checked />
+          <span class="px-3 py-2 rounded-md bg-slate-100 text-slate-700">Non, pas besoin</span>
+        </label>
+        <label class="flex items-center gap-3">
+          <input type="radio" name="charte" value="Oui, couleurs + polices" class="peer sr-only" />
+          <span class="px-3 py-2 rounded-md bg-slate-100 text-slate-700">Oui, couleurs + polices</span>
+        </label>
+        <label class="flex items-center gap-3">
+          <input type="radio" name="charte" value="Oui, charte complète" class="peer sr-only" />
+          <span class="px-3 py-2 rounded-md bg-slate-100 text-slate-700">Oui, charte complète</span>
+        </label>
+      </fieldset>
+
+      <!-- 2. Couleurs / style -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">2) Style visuel préféré (choix rapide)</legend>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2">
+            <input type="radio" name="style" value="Classique / sobre" checked />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Classique / sobre</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="target" value="Grand public (15-80 ans)" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Grand public (15-80 ans)</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="radio" name="style" value="Moderne / minimal" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Moderne / minimal</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="target" value="Professionnels/enseignants" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Professionnels / Enseignants</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="target" value="Autre" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Autre (précisez ci-dessous)</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="radio" name="style" value="Coloré / dynamique" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Coloré / dynamique</span>
           </label>
         </div>
-      </section>
+      </fieldset>
 
-      <!-- 2 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">2. Nombre de livres au lancement</label>
-        <div class="flex flex-col sm:flex-row sm:gap-3 gap-2">
-          <label class="flex items-center gap-3">
-            <input type="radio" name="volume" value="1-10" class="form-radio h-4 w-4 text-blue-600" />
-            <span>1-10</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="volume" value="11-50" class="form-radio h-4 w-4 text-blue-600" />
-            <span>11-50</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="volume" value="50+" class="form-radio h-4 w-4 text-blue-600" />
-            <span>50+</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="volume" value="Je ne sais pas" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Je ne sais pas</span>
-          </label>
-        </div>
-      </section>
-
-      <!-- 3 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">3. Langues du site</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="languages" value="Français" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Français</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="languages" value="Anglais" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Anglais</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="languages" value="Espagnol" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Espagnol</span>
-          </label>
-        </div>
-      </section>
-
-      <!-- 4 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">4. Comment souhaitez-vous livrer les livres numériques ?</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="radio" name="delivery" value="Téléchargement immédiat après paiement" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Téléchargement immédiat après paiement</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="delivery" value="Envoi par e-mail avec lien" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Envoi par e-mail avec lien</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="delivery" value="Licence/compte (accès depuis espace client)" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Licence / accès via espace client</span>
-          </label>
-        </div>
-      </section>
-
-      <!-- 5 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">5. DRM / protection anti-piratage</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="radio" name="drm" value="Oui, nécessaire" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Oui, nécessaire</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="drm" value="Non, pas pour l'instant" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Non, pas pour l'instant</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="drm" value="Je veux des conseils" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Je veux des conseils</span>
-          </label>
-        </div>
-      </section>
-
-      <!-- 6 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">6. Charte graphique / logo</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="branding" value="Logo fourni" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Logo fourni</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="branding" value="Charte graphique à créer" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Charte graphique à créer</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="branding" value="Exemples de couleurs : Bleu" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Couleur principale : Bleu</span>
-          </label>
-        </div>
-      </section>
-
-      <!-- 7 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">7. Paiements souhaités (cochez tout)</label>
+      <!-- 3. Catégories d'articles -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">3) Quelles catégories voulez-vous dès le lancement ? (plusieurs possibles)</legend>
         <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="payments" value="Carte débit/crédit (Visa/Mastercard)" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>Carte (Visa/Mastercard)</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="Politique" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Politique</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="payments" value="MonCash" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>MonCash</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="Économie" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Économie</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="payments" value="NatCash" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>NatCash</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="Sport" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Sport</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="checkbox" name="payments" value="PayPal" class="form-checkbox h-4 w-4 text-blue-600" />
-            <span>PayPal</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="Culture" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Culture</span>
           </label>
-        </div>
-      </section>
-
-      <!-- 8 -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">8. Contenu (textes & images)</label>
-        <div class="space-y-2">
-          <label class="flex items-center gap-3">
-            <input type="radio" name="contentReady" value="Prêt" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Prêt</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="International" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">International</span>
           </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="contentReady" value="Partiellement prêt" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Partiellement prêt (besoin d'aide)</span>
-          </label>
-          <label class="flex items-center gap-3">
-            <input type="radio" name="contentReady" value="Non prêt (je veux service rédaction)" class="form-radio h-4 w-4 text-blue-600" />
-            <span>Non prêt (je veux service de rédaction)</span>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="categories" value="Autre" id="catAutreChk" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Autre</span>
           </label>
         </div>
-      </section>
 
-      <!-- 9 Free text -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">9. Priorité des fonctionnalités (choisir 1)</label>
-        <select name="priority" class="w-full rounded-md border-slate-200 shadow-sm p-2 text-sm">
-          <option value="Vente & Paiement">Vente & Paiement</option>
-          <option value="SEO & Blog">SEO & Blog</option>
-          <option value="Espace client & Téléchargements">Espace client & Téléchargements</option>
-          <option value="Design & Branding">Design & Branding</option>
+        <div id="catAutreField" class="mt-2 hidden">
+          <label class="text-xs text-slate-600">Si "Autre", précisez :</label>
+          <input type="text" name="categories_autre" class="mt-1 block w-full rounded-md border-slate-200 shadow-sm p-2 text-sm" placeholder="Ex : Tech, Santé..." />
+        </div>
+      </fieldset>
+
+      <!-- 4. Contenu prêt -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">4) Le contenu initial est-il prêt ?</legend>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="contenu" value="Non, besoin d'aide" checked />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Non, besoin d'aide</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="contenu" value="Oui, articles + images prêts" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Oui, articles + images prêts</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="contenu" value="Partiellement (quelques articles)" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Partiellement</span>
+        </label>
+      </fieldset>
+
+      <!-- 5. Plateforme préférée -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">5) Plateforme préférée pour le site</legend>
+        <select name="plateforme" class="mt-1 block w-full rounded-md border-slate-200 p-2 text-sm">
+          <option value="Aucune préférence">Aucune préférence</option>
+          <option value="WordPress">WordPress</option>
+          <option value="Système sur-mesure">Système sur-mesure</option>
+          <option value="Autre">Autre</option>
         </select>
-      </section>
+      </fieldset>
 
-      <!-- 10 Comments -->
-      <section>
-        <label class="block text-sm font-medium text-slate-700 mb-2">10. Commentaire / précision (si "Autre" ou détails)</label>
-        <textarea name="comments" rows="4" class="w-full rounded-md border border-slate-200 p-2 text-sm" placeholder="Écrivez ici..."></textarea>
-      </section>
+      <!-- 6. Public cible -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">6) Public cible (cochez tout ce qui s'applique)</legend>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="public" value="Jeunes (15-30)" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Jeunes (15-30)</span>
+          </label>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="public" value="Adultes (30-60)" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Adultes (30-60)</span>
+          </label>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="public" value="Seniors (60+)" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Seniors (60+)</span>
+          </label>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" name="public" value="Professionnels / Experts" />
+            <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Professionnels / Experts</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- 7. Budget & délai -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">7) Budget estimé & délai</legend>
+        <div class="grid grid-cols-2 gap-2">
+          <select name="budget" class="rounded-md p-2 border-slate-200 text-sm">
+            <option value="Non précisé">Budget non précisé</option>
+            <option value="Petit (<$1k)">Petit (&lt;$1k)</option>
+            <option value="Moyen ($1k-5k)">Moyen ($1k-5k)</option>
+            <option value="Important (&gt;$5k)">Important (&gt;$5k)</option>
+          </select>
+          <select name="delai" class="rounded-md p-2 border-slate-200 text-sm">
+            <option value="Non précisé">Délai non précisé</option>
+            <option value="1-2 semaines">1-2 semaines</option>
+            <option value="3-6 semaines">3-6 semaines</option>
+            <option value="2+ mois">2+ mois</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- 8. Publicités -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">8) Souhaitez-vous des emplacements publicitaires dès le départ ?</legend>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="ads" value="Oui, plusieurs emplacements" checked />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Oui, plusieurs emplacements</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="ads" value="Oui, 1-2 emplacements" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Oui, 1-2 emplacements</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="ads" value="Non, pas pour l'instant" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Non, pas pour l'instant</span>
+        </label>
+      </fieldset>
+
+      <!-- 9. Réseaux sociaux / formation -->
+      <fieldset class="space-y-2">
+        <legend class="text-sm font-medium">9) Avez-vous besoin de formation pour gérer le site / réseaux ?</legend>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="formation" value="Oui, formation back-office" checked />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Oui, formation back-office</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="formation" value="Oui, réseaux sociaux + publication" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Oui, réseaux sociaux</span>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="radio" name="formation" value="Non" />
+          <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-700 text-sm">Non</span>
+        </label>
+      </fieldset>
+
+      <!-- 10. Commentaire libre -->
+      <div>
+        <label class="text-sm font-medium">10) Commentaire ou précision (optionnel)</label>
+        <textarea name="commentaire" rows="3" class="mt-1 block w-full rounded-md border-slate-200 p-2 text-sm" placeholder="Autres infos utiles..."></textarea>
+      </div>
 
       <!-- Submit -->
-      <div class="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p class="text-xs text-slate-500">Les réponses s'ouvriront dans WhatsApp pour confirmation avant envoi.</p>
-        <button
-          type="submit"
-          id="sendBtn"
-          class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        >
+      <div class="flex items-center gap-3">
+        <button type="submit" id="sendBtn" class="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-slate-800 text-white px-4 py-2 text-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300">
           <i class="fab fa-whatsapp"></i>
-          Envoyer via WhatsApp
+          <span>Envoyer via WhatsApp</span>
+        </button>
+        <button type="button" id="resetBtn" class="text-sm px-3 py-2 rounded-md border border-slate-200 bg-white" onclick="document.getElementById('qcmForm').reset();">
+          Réinitialiser
         </button>
       </div>
+
+      <p class="text-xs text-slate-500 mt-2">En cliquant sur Envoyer, vos réponses seront pré-remplies dans WhatsApp à destination du numéro +50935601379. Vous pourrez vérifier avant d'envoyer.</p>
     </form>
 
-    <footer class="mt-4 text-xs text-slate-400">
-      <p><strong>Sécurité & confidentialité :</strong> aucun enregistrement côté navigateur — le message est pré-rempli puis ouvert via WhatsApp.</p>
+    <footer class="mt-6 text-center text-xs text-slate-500">
+      <p>VTN Word News — Questionnaire de cadrage</p>
     </footer>
   </main>
 
   <script>
-    // Numéro WhatsApp (format international sans +)
-    const WA_NUMBER = "50935601379";
+    // Toggle "Autre catégorie" text field
+    document.getElementById('catAutreChk').addEventListener('change', function () {
+      const fld = document.getElementById('catAutreField');
+      fld.classList.toggle('hidden', !this.checked);
+    });
 
-    function getCheckedValues(form, name) {
-      return Array.from(form.elements[name] ? form.elements[name] : [])
-        .filter(el => (el.type === 'checkbox' || el.type === 'radio') ? el.checked : false)
-        .map(el => el.value);
+    function getSingleValue(form, name) {
+      const el = form.elements[name];
+      if (!el) return '';
+      if (el.type === 'select-one') return el.value;
+      // radios NodeList
+      if (el.length) {
+        for (let i = 0; i < el.length; i++) {
+          if (el[i].checked) return el[i].value;
+        }
+      }
+      return el.value || '';
     }
 
-    document.getElementById('clarifyForm').addEventListener('submit', function (e) {
+    function getCheckedValues(form, name) {
+      const els = form.querySelectorAll(`[name="${name}"]`);
+      const vals = [];
+      els.forEach(e => {
+        if (e.type === 'checkbox' && e.checked) vals.push(e.value);
+      });
+      return vals;
+    }
+
+    function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
 
-      // Single choice fields (radio)
-      const target = form.elements['target'] && form.elements['target'].value ? form.elements['target'].value : "Non précisé";
-      const volume = form.elements['volume'] && form.elements['volume'].value ? form.elements['volume'].value : "Non précisé";
-      const delivery = form.elements['delivery'] && form.elements['delivery'].value ? form.elements['delivery'].value : "Non précisé";
-      const drm = form.elements['drm'] && form.elements['drm'].value ? form.elements['drm'].value : "Non précisé";
-      const contentReady = form.elements['contentReady'] && form.elements['contentReady'].value ? form.elements['contentReady'].value : "Non précisé";
-      const priority = form.elements['priority'] && form.elements['priority'].value ? form.elements['priority'].value : "Non précisé";
+      // Collect values
+      const charte = getSingleValue(form, 'charte');
+      const style = getSingleValue(form, 'style');
+      const categories = getCheckedValues(form, 'categories');
+      const categoriesAutre = form.elements['categories_autre'] ? form.elements['categories_autre'].value.trim() : '';
+      if (categories.includes('Autre') && categoriesAutre) {
+        // replace 'Autre' with detail
+        const idx = categories.indexOf('Autre');
+        categories[idx] = `Autre: ${categoriesAutre}`;
+      }
+      const contenu = getSingleValue(form, 'contenu');
+      const plateforme = getSingleValue(form, 'plateforme');
+      const publicTarget = getCheckedValues(form, 'public');
+      const budget = getSingleValue(form, 'budget');
+      const delai = getSingleValue(form, 'delai');
+      const ads = getSingleValue(form, 'ads');
+      const formation = getSingleValue(form, 'formation');
+      const commentaire = form.elements['commentaire'].value.trim();
 
-      // Multi choice fields
-      const languages = getCheckedValues(form, 'languages');
-      const branding = getCheckedValues(form, 'branding');
-      const payments = getCheckedValues(form, 'payments');
+      // Build message (friendly, line breaks)
+      let message = "VTN Word News - Clarifications rapide:%0A";
+      message += "%0A1) Charte graphique: " + encodeURIComponent(charte) + "%0A";
+      message += "2) Style visuel: " + encodeURIComponent(style) + "%0A";
+      message += "3) Catégories: " + encodeURIComponent(categories.length ? categories.join(', ') : 'Aucune sélection') + "%0A";
+      message += "4) Contenu initial: " + encodeURIComponent(contenu) + "%0A";
+      message += "5) Plateforme: " + encodeURIComponent(plateforme) + "%0A";
+      message += "6) Public cible: " + encodeURIComponent(publicTarget.length ? publicTarget.join(', ') : 'Non précisé') + "%0A";
+      message += "7) Budget: " + encodeURIComponent(budget) + " | Délai: " + encodeURIComponent(delai) + "%0A";
+      message += "8) Publicités: " + encodeURIComponent(ads) + "%0A";
+      message += "9) Formation: " + encodeURIComponent(formation) + "%0A";
+      if (commentaire) {
+        message += "10) Commentaire: " + encodeURIComponent(commentaire) + "%0A";
+      }
 
-      const comments = form.elements['comments'] ? form.elements['comments'].value.trim() : "";
+      // WhatsApp number (international, no + or spaces)
+      const phone = "50935601379";
+      const waURL = "https://wa.me/" + phone + "?text=" + message;
 
-      // Build message (user-friendly)
-      const lines = [
-        "QCM - LivAyiti : clarifications",
-        "",
-        "1) Public cible : " + target,
-        "2) Volume au lancement : " + volume,
-        "3) Langues : " + (languages.length ? languages.join(', ') : "Non précisé"),
-        "4) Livraison livres numériques : " + delivery,
-        "5) DRM/protection : " + drm,
-        "6) Branding : " + (branding.length ? branding.join(', ') : "Non précisé"),
-        "7) Moyens de paiement : " + (payments.length ? payments.join(', ') : "Non précisé"),
-        "8) Contenu prêt : " + contentReady,
-        "9) Priorité : " + priority,
-        "10) Commentaires : " + (comments ? comments : "Aucun"),
-        "",
-        "Merci !"
-      ];
+      // Open WhatsApp (new tab/window). The user will confirm the message in WhatsApp before sending.
+      window.open(waURL, '_blank');
 
-      const message = encodeURIComponent(lines.join('\n'));
-
-      // Open WhatsApp (web)
-      const waUrl = `https://wa.me/${WA_NUMBER}?text=${message}`;
-
-      // In some environments, use whatsapp:// protocol might be preferred, but wa.me is universal for web.
-      window.open(waUrl, '_blank');
-    });
+      return false;
+    }
   </script>
 </body>
 </html>
